@@ -9,7 +9,7 @@ typedef enum Ident
 	FERMEPAR,
 	OUVREPAR,
 	EXPR,
-	FINFICHER
+	FINFICHIER
 } Ident;
 
 class Symbole {

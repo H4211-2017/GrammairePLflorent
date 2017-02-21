@@ -10,9 +10,9 @@ using namespace std;
 // on avance dans l'expression une fois q'on analyse le c
 Symbole * Lexer::getNext()
 {
-	SymboleTerm * symbole = NULL;
+	Symbole * symbole = NULL;
 	
-	if (position >= string.length())
+	if (position >= expression.length())
 	{
 		symbole = new SymboleTerm(Ident::FINFICHIER);
 	}

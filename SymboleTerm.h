@@ -6,7 +6,7 @@
 class SymboleTerm : public Symbole {
 
     public:
-    	inline SymboleTerm::SymboleTerm(Ident id) : Symbole(id) {}
+    	inline SymboleTerm(Ident id) : Symbole(id) {}
 		virtual inline ~SymboleTerm() {}
 
     private:

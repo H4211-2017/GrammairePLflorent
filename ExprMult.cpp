@@ -2,5 +2,5 @@
 
 int ExprMult::eval()
 {
-	return gauche.eval() * droite.eval();
+	return gauche->eval() * droite->eval();
 }
