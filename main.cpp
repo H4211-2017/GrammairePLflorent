@@ -3,8 +3,8 @@
 using namespace std;
 
 int main() {
-
-	Automate automate("5 + 2");	
+	string expression = "5+2";
+	Automate automate(expression);	
 	automate.lecture();
 	return 0;
 }

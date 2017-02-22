@@ -2,5 +2,5 @@
 
 int ExprPlus::eval()
 {
-	return gauche.eval() + droite.eval();
+	return gauche->eval() + droite->eval();
 }

@@ -6,14 +6,14 @@
 class Nombre : public Expr {
 
     public:
-    	inline Nombre(int aVal) : Expr(NOMBRE), val(aVal) {}
-    	 
-		virtual inline ~Nombre() {}
+    	Nombre(int aVal); 
+ 
+	virtual  ~Nombre();
 		
-		virtual int eval();
+	virtual int eval();
 
     private:
-		int val;
+	int val;
 };
 
 #endif //NOMBRE_H

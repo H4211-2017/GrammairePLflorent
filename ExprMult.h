@@ -6,7 +6,7 @@
 class ExprMult : public ExprBin {
 
     public:
-		inline ExprMult(Expr * exprGauche, Expr * exprDroite) : ExprBin(Expr * exprGauche, Expr * exprDroite) {}
+		inline ExprMult(Expr * exprGauche, Expr * exprDroite) : ExprBin(exprGauche,exprDroite) {}
 		virtual inline ~ExprMult() {}
 		
 		virtual int eval();

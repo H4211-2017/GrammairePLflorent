@@ -2,8 +2,8 @@ CC=g++
 CFLAGS=-g -std=c++11# -DLOG_DEBUG
 LFLAGS=
 
-SRC  := Automate.cpp Lexer.cpp main.cpp
-OBJ := $(SRC:%.cpp=%.o)
+SRC=Automate.cpp Etat.cpp ExprBin.cpp ExprMult.cpp ExprPlus.cpp Lexer.cpp main.cpp Nombre.cpp
+OBJ=$(SRC:.cpp=.o)
 LIBS = 
 PROG=LALR
 
@@ -12,7 +12,7 @@ export BIN_DIR CC CFLAGS
 .PHONY: all
 all: $(PROG)
 
-$(PROG): $(OBJ) subdir
+$(PROG): $(OBJ)
 	$(CC) $(LFLAGS) -o $(PROG) $(OBJ) $(LIBS)
 
 %.o: %.cpp
@@ -29,5 +29,10 @@ clean:
 # DO NOT DELETE
 
 Automate.o: Automate.h Lexer.h Symbole.h Etat.h
+Etat.o: Etat.h
+ExprBin.o: ExprBin.h Expr.h Symbole.h
+ExprMult.o: ExprMult.h ExprBin.h Expr.h Symbole.h
+ExprPlus.o: ExprPlus.h ExprBin.h Expr.h Symbole.h
 Lexer.o: Lexer.h SymboleTerm.h Symbole.h Nombre.h Expr.h
 main.o: Automate.h
+Nombre.o: Nombre.h Expr.h Symbole.h

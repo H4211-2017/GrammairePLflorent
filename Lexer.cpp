@@ -18,33 +18,28 @@ Symbole * Lexer::getNext()
 	}
 	else
 	{
-		switch (expression[position])
-		{
-			case '+':				
-				symbole = new SymboleTerm(Ident::PLUS);
-				break;
-				
-			case '*':			
-				symbole = new SymboleTerm(Ident::MULT);
-				break;
-			
-			case '(':			
-				symbole = new SymboleTerm(Ident::OUVREPAR);
-				break;
-				
-			case ')':			
-				symbole = new SymboleTerm(Ident::FERMEPAR);
-				break;
-				
-			case >'0':
-			case <'9':
-				symbole = new Nombre(concatNombre());
-				break;	
-			
-			default :			
-				symbole = getNext(); //recurcivite pour avancer jusqu'au prochain caractere connu
-				break;
+		char carac = expression[position];
+		if(carac == '+'){
+			symbole = new SymboleTerm(Ident::PLUS);
 		}
+		else if(carac == '*'){
+			symbole = new SymboleTerm(Ident::MULT);
+		}
+		else if(carac == '('){				
+			symbole = new SymboleTerm(Ident::OUVREPAR);
+		
+		}
+		else if(carac == ')'){
+			symbole = new SymboleTerm(Ident::FERMEPAR);
+		}
+		else if(carac >= '0' && carac <= '9'){
+			symbole = new Nombre(concatNombre());
+		}
+		else {
+			symbole = getNext();
+		}
+		
+		
 	}
 	
 	return symbole;

@@ -9,12 +9,12 @@ class Automate;
 class Etat {
 
     public:
-    	inline Etat(std::string &name) : nom(name) {} 
+    	inline Etat(Symbole* s) : symbole(s) {} 
 		virtual inline ~Etat() {}
 		virtual void transition(Automate automate, Symbole symbole) = 0;
 
     private:
-		std::string nom;
+		Symbole* symbole;
 };
 
 #endif //ETAT_H
