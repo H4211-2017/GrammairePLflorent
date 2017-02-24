@@ -14,6 +14,9 @@ class Automate {
 		Automate(std::string &expression);
 		virtual ~Automate();
 		void lecture();
+		void decalage(Symbole * s, int etat);
+		void reduction(int etat);
+		void accepter();
 
     private:
 		std::stack<Symbole *> pileSymboles;

@@ -11,7 +11,7 @@ class E0 : public Etat{
     public:
     	inline E0(Symbole s):Etat(s){};
 		virtual ~Etat();
-		virtual void transition(Automate automate, Symbole symbole) = 0;
+		virtual void transition(Automate &automate, Symbole * symbole);
 
     private:
 };
