@@ -9,12 +9,11 @@ class Automate;
 class Etat {
 
     public:
-    	inline Etat(Symbole* s) : symbole(s) {} 
+		inline Etat(){}
 		virtual inline ~Etat() {}
-		virtual void transition(Automate automate, Symbole symbole) = 0;
+		virtual void transition(Automate &automate, Symbole * symbole);
 
     private:
-		Symbole* symbole;
 };
 
 #endif //ETAT_H

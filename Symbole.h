@@ -15,9 +15,10 @@ typedef enum Ident:int
 class Symbole {
 
     public:
-    	inline Symbole(Ident id) : ident(id) {}
-		virtual inline ~Symbole() {}
+    	Symbole(Ident id);
+		virtual ~Symbole();
 		inline operator int() const { return ident; } //ce que renvoit un symbole lorsque cast sur int.
+		virtual int eval();
 
 	protected:
 		Ident ident;

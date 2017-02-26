@@ -4,18 +4,17 @@
 #include <stack>
 #include <string>
 
-class Symbole;
-class Etat;
-class Lexer;
+#include "Etat.h"
+#include "Lexer.h"
 
 class Automate {
 
     public:
 		Automate(std::string &expression);
 		virtual ~Automate();
-		void lecture();
+		int lecture();
 		void decalage(Symbole * s, int etat);
-		void reduction(int etat);
+		void reduction(int n, Symbole * s);
 		void accepter();
 
     private:

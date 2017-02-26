@@ -1,5 +1,5 @@
 #include "Lexer.h"
-
+#include "Symbole.h"
 #include <cstdlib>
 
 #include "SymboleTerm.h"
@@ -14,23 +14,23 @@ Symbole * Lexer::getNext()
 	
 	if (position >= expression.length())
 	{
-		symbole = new SymboleTerm(Ident::FINFICHIER);
+		symbole = new SymboleTerm(FINFICHIER);
 	}
 	else
 	{
 		char carac = expression[position];
 		if(carac == '+'){
-			symbole = new SymboleTerm(Ident::PLUS);
+			symbole = new SymboleTerm(PLUS);
 		}
 		else if(carac == '*'){
-			symbole = new SymboleTerm(Ident::MULT);
+			symbole = new SymboleTerm(MULT);
 		}
 		else if(carac == '('){				
-			symbole = new SymboleTerm(Ident::OUVREPAR);
+			symbole = new SymboleTerm(OUVREPAR);
 		
 		}
 		else if(carac == ')'){
-			symbole = new SymboleTerm(Ident::FERMEPAR);
+			symbole = new SymboleTerm(FERMEPAR);
 		}
 		else if(carac >= '0' && carac <= '9'){
 			symbole = new Nombre(concatNombre());
