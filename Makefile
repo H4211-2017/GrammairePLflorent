@@ -2,7 +2,7 @@ CC=g++
 CFLAGS=-g -std=c++11# -DLOG_DEBUG
 LFLAGS=
 
-SRC=Automate.cpp Etat.cpp ExprBin.cpp ExprMult.cpp ExprPlus.cpp Lexer.cpp main.cpp Nombre.cpp
+SRC=Automate.cpp Etat.cpp EtatImpl.cpp ExprBin.cpp ExprMult.cpp ExprPlus.cpp Lexer.cpp main.cpp Nombre.cpp Symbole.cpp SymboleTerm.cpp
 OBJ=$(SRC:.cpp=.o)
 LIBS = 
 PROG=LALR
